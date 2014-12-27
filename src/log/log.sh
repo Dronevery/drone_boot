@@ -290,5 +290,5 @@ function reset_logcolor()
 
 # Log set functions }}
 
-set_logfile "/data/log/log.txt"
+set_logfile $LOG_MAIN
 set_loglevel $LOG_INFO

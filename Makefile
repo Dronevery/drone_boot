@@ -1,7 +1,7 @@
-PREFIX=/srv/dronevery
+PREFIX=/srv/drone_boot
 DESTDIR=
-LOGDIR=/var/log/dronevery
-CONFDIR=/etc/dronevery
+LOGDIR=/var/log/drone
+CONFDIR=/etc/drone
 
 INSTDIR=$(DESTDIR)$(PREFIX)
 
