@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# source config/env.sh
+source ${WORKDIR}/config/log.sh
+source ${WORKDIR}/net/net.sh
+source ${WORKDIR}/ros/ros.sh
+
+#network adapter initialize
+init_net
+init_ros
+
+

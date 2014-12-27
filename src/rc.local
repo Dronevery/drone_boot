@@ -1,0 +1,7 @@
+#!/bin/bash
+
+source /etc/dronevery/env.sh
+
+$MAIN_ENTRY
+
+exit 0
