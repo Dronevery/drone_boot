@@ -1,5 +1,5 @@
 #!/bin/bash
-export WORKDIR=/srv/startup
+export WORKDIR=/srv/drone_boot
 export MAIN_ENTRY="${WORKDIR}/main.local"
 export U6100_DEV="/dev/ttyUSB3"
 export PL2303_DEV="/dev/ttyUSB0"
