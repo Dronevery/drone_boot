@@ -291,5 +291,5 @@ function reset_logcolor()
 # Log set functions }}
 
 set_logfile $LOG_MAIN
-set_loglevel $LOG_INFO
+set_loglevel $LOG_MAIN_LEVEL
 set_logfmt "[<levelname>] [<asctime>] <message>\n"
