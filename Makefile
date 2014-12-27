@@ -18,11 +18,11 @@ install:
 	install -d $(CONFDIR)
 
 
-	install -m 744 -t -T $(CONFDIR)	config/env.sh
-	cp /etc/rc.local /etc/rc.local.save
-	install -m 755 -t -T /etc/rc.local	src/rc.local
+	install -m 744 -T config/env.sh $(CONFDIR)
+	install -m 544 -T /etc/rc.local	/etc/rc.local.save
+	install -m 755 -T src/rc.local	/etc/rc.local
 	install -m 754 -t $(INSTDIR)	src/main.local src/net src/log src/config src/communication
 
 uninstall:
 	rm -rf $(INSTDIR) $(CONFDIR)
-	mv /etc/rc.local.save /etc/rc.local
+	install -m 755 -T /etc/rc.local.save	/etc/rc.local
