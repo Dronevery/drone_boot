@@ -22,8 +22,7 @@ install:
 
 
 	install -m 744 -t $(CONFDIR)	config/env.sh
-	install -m 544 -T /etc/rc.local	/etc/rc.local.save
-	install -m 755 --backup=/etc/rc.local.save -T src/rc.local	/etc/rc.local
+	install -m 755 --backup=simple -T src/rc.local	/etc/rc.local
 	install -m 754 -t $(INSTDIR)	src/main.local
 	install -m 754 -t $(INSTDIR)/net	src/net/*.sh
 	install -m 754 -t $(INSTDIR)/log	src/log/*.sh
@@ -31,4 +30,4 @@ install:
 
 uninstall:
 	rm -rf $(INSTDIR) $(CONFDIR)
-	install -m 755 -T /etc/rc.local.save	/etc/rc.local
+	#install -m 755 -T /etc/rc.local.save	/etc/rc.local
