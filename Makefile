@@ -18,7 +18,7 @@ install:
 	install -d $(CONFDIR)
 
 
-	install -m 744 -T config/env.sh $(CONFDIR)
+	install -m 744 -t $(CONFDIR)	config/env.sh
 	install -m 544 -T /etc/rc.local	/etc/rc.local.save
 	install -m 755 -T src/rc.local	/etc/rc.local
 	install -m 754 -t $(INSTDIR)	src/main.local src/net src/log src/config src/communication
