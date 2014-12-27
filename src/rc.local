@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source /etc/dronevery/env.sh
+source /etc/drone/env.sh
 
 $MAIN_ENTRY
 
