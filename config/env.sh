@@ -7,3 +7,4 @@ export LOG_DIR="/var/log/drone"
 export LOG_MAIN="${LOG_DIR}/drone"
 export LOG_MAIN_LEVEL=3
 export LOG_MAVPROXY="${LOG_DIR}/mavproxy"
+export IP_SERVER="121.40.33.249"
