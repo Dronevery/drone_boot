@@ -7,7 +7,7 @@ source ${WORKDIR}/net/port.sh
 function init_net()
 {
 	info_msg "network starting..."
-	init_U6100 "$U6100_DEV"
+	init_U6100
 	route_3g
 	tcp_port_map 10000 10000 20000 #Directional broadcast port
 	tcp_port_map 22 10022 20022 #Directional broadcast port

@@ -1,9 +1,11 @@
 #!/bin/bash
+source ${WORKDIR}/dev/dev.sh
 
 function init_U6100()
 {
 	debug_msg "U6100(ppp) starting..."
-	local DEV="$1"
+	local DEV
+	DEV=$(usb2dev 1c9e 9603 | awk '{print $1}')
 	while [ ! $ip ];do
 		debug_msg "U6100 try to connecting..."
     	local ip=$(ip addr show dev ppp0 2>/dev/null | awk '{if($1=="inet") print $2}' | awk 'BEGIN{FS="/"}{print $1}' | head -n 1)
