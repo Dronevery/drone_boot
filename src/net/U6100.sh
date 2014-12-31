@@ -5,7 +5,7 @@ function init_U6100()
 {
 	debug_msg "U6100(ppp) starting..."
 	local DEV
-	DEV=$(usb2dev 1c9e 9603 | awk '{print $1}')
+	DEV=$(usb2dev 1c9e 9603 | awk '{print $3}')
 	debug_msg "U6100 dev file: $DEV"
 	while [ ! $ip ];do
 		debug_msg "U6100 try to connecting..."
