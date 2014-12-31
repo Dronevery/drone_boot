@@ -22,6 +22,7 @@ install:
 
 
 	install -m 744 -t $(CONFDIR)	config/env.sh
+	install -m 644 -t $(CONFDIR)	config/mavasync.json
 	install -m 755 --backup=simple -T src/rc.local	/etc/rc.local
 	install -m 754 -t $(INSTDIR)	src/main.local
 	install -m 754 -t $(INSTDIR)/net	src/net/*.sh
