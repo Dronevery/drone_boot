@@ -12,7 +12,7 @@ function init_U6100()
 		local ip=$(ip addr show dev ppp0 2>/dev/null | awk '{if($1=="inet") print $2}' | awk 'BEGIN{FS="/"}{print $1}' | head -n 1)
 		if [ `ps aux | grep pppd | wc -l` = 1 ];then
 			debug_msg "U6100 call pppd"
-			/usr/sbin/pppd "${PL2303_DEV}" connect "chat -v -f /srv/DTR-3G/chatscript "
+			/usr/sbin/pppd "${U6100_DEV}" connect "chat -v -f /srv/DTR-3G/chatscript "
 		fi
 		sleep 3
 	done;
