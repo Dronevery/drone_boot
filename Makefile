@@ -5,12 +5,8 @@ CONFDIR=/etc/drone
 
 INSTDIR=$(DESTDIR)$(PREFIX)
 
-all:
-	@echo do nothing. try one of the targets:
-	@echo
-	@echo "  install"
-	@echo "  uninstall"
-
+all: install config_install
+	
 
 install:
 	install -d $(INSTDIR)
@@ -21,17 +17,18 @@ install:
 	install -d $(INSTDIR)/log
 	install -d $(INSTDIR)/communication
 
-	install -m 744 -t $(CONFDIR)	config/env.sh
-	install -m 644 -t $(CONFDIR)	config/mavasync.json
-
 	install -m 664 --backup=simple -T config/99-usb-serial.rules	/etc/udev/rules.d/99-usb-serial.rules
 	install -m 755 --backup=simple -T src/rc.local	/etc/rc.local
 	
-	install -m 754 -t $(INSTDIR)	src/main.local
+	install -m 754 -t $(INSTDIR)		src/main.local
 	install -m 754 -t $(INSTDIR)/dev	src/dev/*.sh
 	install -m 754 -t $(INSTDIR)/net	src/net/*.sh
 	install -m 754 -t $(INSTDIR)/log	src/log/*.sh
 	install -m 754 -t $(INSTDIR)/communication src/communication/*.sh
+
+config_install:
+	install -m 744 -t $(CONFDIR)	config/env.sh
+	install -m 644 -t $(CONFDIR)	config/mavasync.json
 
 uninstall:
 	rm -rf $(INSTDIR) $(CONFDIR)
