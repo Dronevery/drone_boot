@@ -4,10 +4,8 @@ source ${WORKDIR}/dev/dev.sh
 function init_U6100()
 {
 	debug_msg "U6100(ppp) starting..."
-	#local DEV
-	#DEV=$(usb2dev 1c9e 9603 | awk '{print $3}')
-	#debug_msg "U6100 dev file: $DEV"
 	if [ ! -x "${U6100_DEV}" ];then
+		warn_msg "NO U6100 device, abort"
 		return 0
 	fi
 	while [ ! $ip ];do
