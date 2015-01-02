@@ -7,6 +7,9 @@ function init_U6100()
 	#local DEV
 	#DEV=$(usb2dev 1c9e 9603 | awk '{print $3}')
 	#debug_msg "U6100 dev file: $DEV"
+	if [ ! -x "${U6100_DEV}" ];then
+		return 0
+	fi
 	while [ ! $ip ];do
 		debug_msg "U6100 try to connecting..."
 		local ip=$(ip addr show dev ppp0 2>/dev/null | awk '{if($1=="inet") print $2}' | awk 'BEGIN{FS="/"}{print $1}' | head -n 1)
