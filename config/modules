@@ -1,0 +1,2 @@
+# /etc/modules
+usbserial vendor=0x1c9e product=0x9e00
