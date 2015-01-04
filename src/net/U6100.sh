@@ -1,5 +1,5 @@
 #!/bin/bash
-source ${WORKDIR}/dev/dev.sh
+source ${WORKDIR}/net/ip.sh
 
 function init_U6100()
 {
@@ -10,14 +10,14 @@ function init_U6100()
 	fi
 	while [ ! $ip ];do
 		debug_msg "U6100 try to connecting..."
-		local ip=$(ip addr show dev ppp0 2>/dev/null | awk '{if($1=="inet") print $2}' | awk 'BEGIN{FS="/"}{print $1}' | head -n 1)
+		local ip=$(ipaddress ppp2)
 		if [ `ps aux | grep pppd | wc -l` = 1 ];then
 			debug_msg "U6100 call pppd"
-			/usr/sbin/pppd "${U6100_DEV}" connect "chat -v -f /srv/DTR-3G/chatscript "
+			/usr/sbin/pppd "${U6100_DEV}" connect "chat -v -f /etc/ppp/chat/u6100-chat" unit 2
 		fi
 		sleep 3
 	done;
 	
-	export UNICOM_IFACE="ppp0"
-	export UNICOM_IP=$ip
+	export IFACE_UNICOM="ppp2"
+	export IP_UNICOM=$ip
 }
