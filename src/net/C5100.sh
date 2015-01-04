@@ -4,7 +4,7 @@ source ${WORKDIR}/net/ip.sh
 function init_C5100()
 {
 	debug_msg "C5100(ppp) starting..."
-	if [ ! -x "${C5100_DEV}" ];then
+	if [ ! -e "${C5100_DEV}" ];then
 		warn_msg "NO C5100 device, abort"
 		return 0
 	fi

@@ -1,6 +1,7 @@
 #!/bin/bash
 
 source ${WORKDIR}/net/U6100.sh
+source ${WORKDIR}/net/C5100.sh
 source ${WORKDIR}/net/route.sh
 source ${WORKDIR}/net/port.sh
 

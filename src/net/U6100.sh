@@ -4,7 +4,7 @@ source ${WORKDIR}/net/ip.sh
 function init_U6100()
 {
 	debug_msg "U6100(ppp) starting..."
-	if [ ! -x "${U6100_DEV}" ];then
+	if [ ! -e "${U6100_DEV}" ];then
 		warn_msg "NO U6100 device, abort"
 		return 0
 	fi
