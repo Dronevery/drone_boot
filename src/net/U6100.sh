@@ -13,7 +13,7 @@ function init_U6100()
 		local ip=$(ipaddress ppp2)
 		if [ `ps aux | grep pppd | wc -l` = 1 ];then
 			debug_msg "U6100 call pppd"
-			/usr/sbin/pppd "${U6100_DEV}" connect "chat -v -f /etc/ppp/chat/u6100-chat" unit 2
+			/usr/sbin/pppd "${U6100_DEV}" connect "chat -v -f /etc/ppp/chat/u6100.chatscript" unit 2
 		fi
 		sleep 3
 	done;
