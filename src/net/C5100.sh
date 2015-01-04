@@ -11,7 +11,7 @@ function init_C5100()
 	while [ ! $ip ];do
 		debug_msg "C5100 try to connecting..."
 		local ip=$(ipaddress ppp1)
-		if [ `ps aux | grep pppd | wc -l` = 1 ];then
+		if [ `ps aux | grep C5100 | wc -l` = 1 ];then
 			debug_msg "C5100 call pppd"
 			/usr/sbin/pppd "${C5100_DEV}" connect "chat -v -f /etc/ppp/chat/c5100.chatscript" unit 1 user "card" password "card" 
 		fi
