@@ -29,6 +29,7 @@ install:
 config_install:
 	install -m 744 -t $(CONFDIR)	config/env.sh
 	install -m 644 -t $(CONFDIR)	config/mavasync.json
+	install -d /etc/ppp/chat
 	install -m 644 -t /etc/ppp/chat	config/c5100.chatscript
 	install -m 644 -t /etc/ppp/chat	config/u6100.chatscript
 
